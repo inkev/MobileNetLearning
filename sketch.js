@@ -11,6 +11,10 @@ function gotResults(error, results) {
 		console.error(error);
 	} else {
 		console.log(results);
+		let label = results[0].label;
+		fill(0);
+		textSize(64);
+		text(label, 10, height - 100);
 	}
 }
 
