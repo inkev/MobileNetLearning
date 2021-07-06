@@ -1,9 +1,9 @@
 let mobilenet;
-let cat;
+let video;
 
 function modelReady() {
 	console.log('Model is ready!!');
-	mobilenet.predict(cat, gotResults);
+	//mobilenet.predict(cat, gotResults);
 }
 
 function gotResults(error, results) {
@@ -18,15 +18,15 @@ function gotResults(error, results) {
 	}
 }
 
-function imageReady() {
-	image(cat, 0, 0, width, height)
-}
+// function imageReady() {
+// 	image(cat, 0, 0, width, height)
+// }
 
 function setup() {
 	createCanvas(640, 480);
 	background(0);
-	cat = createImg('images/cat.jpg', imageReady);
-	cat.hide();
+	video = createCapture(VIDEO);
+	//cat.hide();
 
 	mobilenet = ml5.imageClassifier('MobileNet', modelReady);
 }
